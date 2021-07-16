@@ -1,0 +1,18 @@
+<mat-card>
+<mat-card-header>
+        
+    <mat-card-title>Title: {{game.title}}</mat-card-title>
+    <mat-card-subtitle>{{game.rate}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      Year: {{game.year}} <br>
+      Price: {{game.price}} <br>
+      minPlayers: {{game.minPlayers}} <br>
+      maxPlayers: {{game.maxPlayers}}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="warn" (click)="delete()">Delete </button>
+  </mat-card-actions>
+</mat-card>
+<h2>Update game</h2>
+<app-add-game></app-add-game>

@@ -1,0 +1,26 @@
+{
+  "name": "assignments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Geleta",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-jwt": "^0.1.11",
+    "angular-route": "^1.8.2",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "expo-face-detector": "^10.1.1",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "json-web-token": "^3.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.14",
+    "socket.io": "^4.1.3"
+  }
+}

@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="space-between">
+    
+<mat-card *ngFor="let game of games">
+        
+        <mat-card-header>
+        
+          <mat-card-title>{{game.title}}</mat-card-title>
+          <mat-card-subtitle>{{game.rate}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            Year: {{game.year}} <br>
+            Price: {{game.price}} <br>
+            minPlayers: {{game.minPlayers}} <br>
+            maxPlayers: {{game.maxPlayers}}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="detail/{{game._id}}">More </button>
+        </mat-card-actions>
+      </mat-card>
+      
+</div>
+<h2>Add game</h2> <br>
+<div fxLayout="row">
+    
+    <app-add-game></app-add-game>
+</div>

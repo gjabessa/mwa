@@ -1,0 +1,31 @@
+<div class="container">
+<h3>Register! </h3>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username">
+  </mat-form-field>
+<br>
+  <mat-form-field appearance="fill">
+    <mat-label>password</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+  <br>
+<mat-form-field appearance="fill">
+    <mat-label>password repeat</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  <br>
+
+  <button mat-button color="primary">Save</button>
+</form>
+    
+
+</div>
+

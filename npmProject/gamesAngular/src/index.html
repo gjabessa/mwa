@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MyApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src = "assets/socket.io.js"></script>
+   
+   
+   
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="mat-typography">
+  
+  <div style="position: fixed; border-radius: 10px;; z-index:10;width:400px;height:450px;background-color: blueviolet;bottom:20px;right:0px;overflow-x: hidden;overflow-y: scroll;">
+    <h2 style="padding: 10px;">Chat with a representative</h2>
+    <ul style="position: relative; z-index:10;height: 70%;" id="messages"></ul>
+  <form  style="position:relative;bottom:0px" id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+  </form>
+  </div>
+  <script>
+    const socket = io('http://localhost:5050',{});
+    var messages = document.getElementById('messages');
+var form = document.getElementById('form');
+var input = document.getElementById('input');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (input.value) {
+    socket.emit('chat message', input.value);
+    input.value = '';
+  }
+});
+
+socket.on('chat message', function(msg) {
+  var item = document.createElement('li');
+  item.textContent = msg;
+  messages.appendChild(item);
+  window.scrollTo(0, document.body.scrollHeight);
+});
+ </script>
+  <app-root></app-root>
+</body>
+</html>
